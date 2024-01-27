@@ -22,6 +22,7 @@ conn to-fortigate
 	leftupdown=/etc/strongswan/vpn-up.sh
 ```
 ## Modify /etc/strongswan.conf to not install routes - this is because we are using route-based VPNs
+```txt
 charon {
         load_modular = yes
         install_routes = no <=
@@ -36,11 +37,12 @@ charon {
                 }       
         }
 }
-
+```
 ## Create ipsec secrets
 append the psk info to the file /etc/ipsec.secrets
+```
 yourip	remoteip : PSK extrastrongsecret
-
+```
 
 ## Create interface creation script
 /etc/strongswan/vpn-up.sh
