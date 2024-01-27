@@ -1,5 +1,6 @@
 # VPN tunnel from ubuntu to Fortigate
 ## Ipsec.conf changes - Add thie connection settings
+```txt
 conn to-fortigate
 	left=%defaultroute
 	leftauth=psk
@@ -19,7 +20,7 @@ conn to-fortigate
 	leftsubnet=0.0.0.0/0
 	rightsubnet=0.0.0.0/0
 	leftupdown=/etc/strongswan/vpn-up.sh
-
+```
 ## Modify /etc/strongswan.conf to not install routes - this is because we are using route-based VPNs
 charon {
         load_modular = yes
